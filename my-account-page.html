@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Account Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        body{
+            color: #262626;
+            font-size: 16px !important;
+            line-height: 28px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .d-none{
+            display: none;
+        }
+        .d-block{
+            display: block;
+        }
+        .membership-account{
+            background-color: #f2f2f2;
+        }
+        .dashboard-wrapper{
+            padding:50px 0 80px;
+        }
+        .page-title{
+            font-weight: 800;
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        .dashboard-row{
+            background: #ededed;
+            border: 1px solid #ddd;
+        }
+        .dashboard-sidebar-column{
+            padding: 0;
+        }
+        .dashboard-sidebar-ul{
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard-sidebar-li{
+            display: block;
+            margin-bottom: 10px;
+        }
+        .dashboard-sidebar-li a{
+            display: block;
+            padding:10px 15px;
+            color:#000;
+            font-weight: 600;
+        }
+        .dashboard-sidebar-li a:hover{
+            text-decoration: none;
+            background-color: #d5d8da;
+        }
+        .dashboard-sidebar-li.active a{
+            border-left: 4px solid #002e62;
+            background-color: #d5d8da;
+        }
+
+        .dashboard-details-column{
+            background-color:#fff;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .dashboard-details{
+            padding:15px;
+            min-height: 60vh;
+        }
+        .dashboard-details-head{
+            padding: 0 0 15px;
+            border-bottom: 1px solid;
+            margin-bottom: 20px;
+        }
+        .dashboard-details-title{
+            font-size:3rem;
+            font-weight: 800;
+        }
+        .m-0{
+            margin:0;
+        }
+        .mb-10{
+            margin-bottom:10px;
+        }
+        .mb-20{
+            margin-bottom: 20px;
+        }
+        .lh-1{
+            line-height: 1.2;
+        }
+        .info-head{
+            opacity:0.6;
+        }
+        .info-name{
+            font-size:2rem;
+            font-weight: 600;
+        }
+        .text-link{
+            display: inline-block;
+            font-weight: 600;
+            margin-right: 15px;
+            text-decoration: underline;
+        }
+        .text-link-blue{
+            color: #2196F3;
+        }
+
+        .text-link-yellow{
+            color: #FF9800;
+        }
+        .text-link-red{
+            color: #E91E63;
+        }
+        .info-school-address{
+            opacity: 0.7;
+        }
+        .info-block{
+            padding:10px;
+        }
+        .info-block-wrapper .info-block:nth-of-type(odd){
+            background-color: #f2f2f2;
+        }
+        .status-tag{
+            text-transform: uppercase;
+            position: relative;
+            border:1px solid #ddd;
+            background-color: #f2f2f2;
+            border-radius: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0px 10px;
+        }
+        .status-tag:after{
+            content:'';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            top: 40%;
+            left: 4px;
+            background: #009688;
+
+        }
+        .status-tag-warning{
+            color: #FF9800;
+            border-color: #FF9800;
+        }
+        .status-tag-warning:after{
+            background: #FF9800;
+        }
+
+        .status-tag-success{
+            color: #009688;
+            border-color: #009688;
+        }
+
+        @media (min-width: 768px){
+            .page-title{
+                font-size: 4rem;
+            }
+            .dashboard-details{
+                padding:30px;
+            }
+        }
+    </style>
+</head>
+<body>
+<section class="membership-account">
+    <div class="container">
+        <div class="dashboard-wrapper">
+            <!--            <h2 class="page-title">--><?php //echo the_title() ?><!--</h2>-->
+            <h2 class="page-title">MY Accouunt</h2>
+            <div class="row dashboard-row">
+                <!-- dashboard sidebar -->
+                <div class="col-md-3 dashboard-sidebar-column">
+                    <div class="dashboard-sidebar">
+                        <ul class="dashboard-sidebar-ul">
+                            <li class="dashboard-sidebar-li active">
+                                <a href="#dashboard-details-1">My Profile</a>
+                            </li>
+
+                            <li class="dashboard-sidebar-li">
+                                <a href="#dashboard-details-2">Membership</a>
+                            </li>
+
+                            <li class="dashboard-sidebar-li">
+                                <a href="#dashboard-details-3">School</a>
+                            </li>
+
+                            <li class="dashboard-sidebar-li">
+                                <a href="javascript:void(0)">Add a Job</a>
+                            </li>
+
+                            <li class="dashboard-sidebar-li">
+                                <a href="#dashboard-details-4">Past Invoices</a>
+                            </li>
+
+                            <li class="dashboard-sidebar-li">
+                                <a href="javascript:void(0)">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- dashboard details -->
+                <div class="col-md-9 dashboard-details-column">
+                    <div class="dashboard-details">
+                        <!-- PROFILE -->
+                        <div id="dashboard-details-1" class="dashboard-details-main dashboard-details-1">
+                            <div class="dashboard-details-head">
+                                <h3 class="dashboard-details-title m-0">My Profile</h3>
+                            </div>
+                            <div class="dashboard-details-body">
+                                <div class="mb-20">
+                                    <p class="info-head m-0">NAME</p>
+                                    <p class="info-name m-0">Abunaser Faisal</p>
+                                </div>
+
+                                <div class="mb-20">
+                                    <p class="info-head m-0">Username</p>
+                                    <p class="info-name m-0">masjidsolutions</p>
+                                </div>
+
+                                <div class="mb-20">
+                                    <p class="info-head m-0">EMAIL</p>
+                                    <p class="info-name m-0">abunaser.faisal@masjidsolutions.net</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MEMBERSHIP DETAILS -->
+                        <div id="dashboard-details-2" class="dashboard-details-main dashboard-details-2 d-none">
+                            <div class="dashboard-details-head">
+                                <h3 class="dashboard-details-title m-0">My Memberships</h3>
+                            </div>
+                            <div class="dashboard-details-body">
+                                <div class="mb-20">
+                                    <p class="info-head m-0">MEMBERSHIP LEVEL</p>
+                                    <p class="info-name m-0">School (101-200 STUDENTS)</p>
+                                    <div class="btn-group">
+                                        <a href="javascript:void(0)" class="text-link text-link-blue">Renew</a>
+                                        <a href="javascript:void(0)" class="text-link text-link-yellow">Change</a>
+                                        <a href="javascript:void(0)" class="text-link text-link-red">Cancel</a>
+                                    </div>
+                                </div>
+
+                                <div class="mb-20">
+                                    <p class="info-head m-0">BILLING</p>
+                                    <p class="info-name m-0">$200/year</p>
+
+                                </div>
+
+                                <div class="mb-20">
+                                    <p class="info-head m-0">EXPIRATION</p>
+                                    <p class="info-name m-0">May 27, 2024</p>
+                                </div>
+
+                                <div class="" style="padding-top:15px">
+                                    <a href="javascript:void(0)" class="btn btn-primary">View All Membership Options</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- SCHOOL INFORMATION -->
+                        <div id="dashboard-details-3" class="dashboard-details-main dashboard-details-3 d-none">
+                            <div class="dashboard-details-head">
+                                <h3 class="dashboard-details-title m-0">My Schools</h3>
+                            </div>
+
+                            <div class="dashboard-details-body">
+                                <div class="info-block-wrapper">
+                                    <div class="info-block mb-20">
+                                        <span class="status-tag status-tag-success">Active</span>
+                                        <p class="info-name m-0">Mohammad Schools of Atlanta</p>
+                                        <p class="info-school-address">9223 E 59th Pl, Tulsa, OK 74145, USA</p>
+                                        <div class="btn-group">
+                                            <a href="javascript:void(0)" class="text-link text-link-blue">Update School Information</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="info-block mb-20">
+                                        <span class="status-tag status-tag-warning">Expired</span>
+                                        <p class="info-name m-0">Iman Academy Southeast</p>
+                                        <p class="info-school-address">825 Jetstream Ct, Webster, TX 77598, USA</p>
+                                        <div class="btn-group">
+                                            <a href="javascript:void(0)" class="text-link text-link-blue">Update School Information</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <!-- PAST INVOICES -->
+                        <div id="dashboard-details-4" class="dashboard-details-main dashboard-details-4 d-none">
+                            <div class="dashboard-details-head">
+                                <h3 class="dashboard-details-title m-0">My Invoices</h3>
+                            </div>
+
+                            <div class="dashboard-details-body">
+                                <div class="info-block-wrapper">
+                                    <div class="info-block">
+                                        <span class="status-tag status-tag-success">Paid</span>
+                                        <p class="info-name m-0">School (101-200 STUDENTS)</p>
+                                        <div class="d-flex" style="display: flex">
+                                            <p class="info-school-address">
+                                                <img src="images/calendar.png" alt="date" style="max-height: 13px;position: relative;top:-2px;">
+                                                <span>May 28, 2023</span>
+                                            </p>
+                                        </div>
+
+                                        <p><span style="font-weight: 600">Amount billed: </span> <span>$200</span> </p>
+
+
+                                    </div>
+
+                                    <div class="info-block">
+                                        <span class="status-tag status-tag-success">Paid</span>
+                                        <p class="info-name m-0">School (1-100 STUDENTS)</p>
+                                        <div class="d-flex" style="display: flex">
+                                            <p class="info-school-address">
+                                                <img src="images/calendar.png" alt="date" style="max-height: 13px;position: relative;top:-2px;">
+                                                <span>May 28, 2022</span>
+                                            </p>
+                                        </div>
+
+                                        <p><span style="font-weight: 600">Amount billed: </span> <span>$100</span> </p>
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JQUERY -->
+<script src="jquery/jquery.min.js"></script>
+<script>
+  jQuery(function ($){
+    // Add a click event listener to the elements with a specific class
+    $('.dashboard-sidebar-li a').click(function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      const targetDivId = $(this).attr('href'); // Get the target div ID from the href attribute
+
+      $('.dashboard-sidebar-li').removeClass('active');
+      $(this).parent().addClass('active');
+
+      $('.dashboard-details .dashboard-details-main').removeClass('d-block');
+      $('.dashboard-details .dashboard-details-main').addClass('d-none');
+      $(targetDivId).removeClass('d-none');
+      $(targetDivId).addClass('d-block'); // Add the 'active' class to the target div
+    });
+  })
+</script>
+</body>
+</html>

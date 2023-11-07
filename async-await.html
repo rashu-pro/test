@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async - Await</title>
+</head>
+<body>
+    
+    <script>
+        function resolveAfter2Seconds(){
+            return new Promise(resolve=>{
+                setTimeout(() => {
+                    resolve('resolved');
+                }, 1000);
+            })
+        }
+
+        async function asyncCall(){
+            console.log('synchronous call!');
+            let response = await resolveAfter2Seconds();
+            console.log(response);
+        }
+
+        asyncCall();
+    </script>
+</body>
+</html>

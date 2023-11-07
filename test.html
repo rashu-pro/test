@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+
+</head>
+
+<body>
+
+  <div style="margin:100px">
+    <input type="text" readonly="readonly">
+  </div>
+
+
+  <a data-url="images/banner.jpg" data-name="convention-banner" class="download-image">
+    Download
+  </a>
+
+
+  <div class="">
+    <p class="details-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, odit.</p>
+    <p class="details-p">Lorem ipsum dolor.</p>
+    <p class="details-p">Lorem ipsum dolor sit amet, consectetur.</p>
+
+    <input type="hidden" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, odit."
+      class="subject">
+
+    <textarea class="text-area" style="display: block;width: 60%;" rows="4"> </textarea>
+
+    <button class="copy-text">Copy Text</button>
+  </div>
+
+  <div>
+    <select class="wpcf7-form-control wpcf7-select form-select" aria-invalid="false" name="from-country">
+      <option value="Italia">Italia</option>
+      <option value="Albania">Albania</option>
+      <option value="Andorra">Andorra</option>
+      <option value="Armenia">Armenia</option>
+      <option value="Austria">Austria</option>
+      <option value="Azerbaijan">Azerbaijan</option>
+      <option value="Belgio">Belgio</option>
+      <option value="Bosnia ed Erzegovina">Bosnia ed Erzegovina</option>
+      <option value="Bulgaria">Bulgaria</option>
+      <option value="Croazia">Croazia</option>
+      <option value="Cipro">Cipro</option>
+      <option value="Repubblica Ceca">Repubblica Ceca</option>
+      <option value="Danimarca">Danimarca</option>
+      <option value="Estonia">Estonia</option>
+      <option value="Finlandia">Finlandia</option>
+      <option value="Francia">Francia</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Germania">Germania</option>
+      <option value="Grecia">Grecia</option>
+      <option value="Ungheria">Ungheria</option>
+      <option value="Islanda">Islanda</option>
+      <option value="Lettonia">Lettonia</option>
+      <option value="Liechtenstein">Liechtenstein</option>
+      <option value="Lituania">Lituania</option>
+      <option value="Lussemburgo">Lussemburgo</option>
+      <option value="Malta">Malta</option>
+      <option value="Moldavia">Moldavia</option>
+      <option value="Monaco">Monaco</option>
+      <option value="Montenegro">Montenegro</option>
+      <option value="Paesi Bassi">Paesi Bassi</option>
+      <option value="Macedonia">Macedonia</option>
+      <option value="Norvegia">Norvegia</option>
+      <option value="Polonia">Polonia</option>
+      <option value="Portogallo">Portogallo</option>
+      <option value="Romania">Romania</option>
+      <option value="San Marino">San Marino</option>
+      <option value="Serbia">Serbia</option>
+      <option value="Slovacchia">Slovacchia</option>
+      <option value="Slovenia">Slovenia</option>
+      <option value="Spagna">Spagna</option>
+      <option value="Svezia">Svezia</option>
+      <option value="Svizzera">Svizzera</option>
+      <option value="Turchia">Turchia</option>
+      <option value="Ucraina">Ucraina</option>
+      <option value="Regno Unito">Regno Unito</option>
+    </select>
+  </div>
+
+
+  <style>
+    .table-custom {
+      border: none;
+      width: 100%;
+    }
+
+    .table-custom thead tr th {
+      background-color: #686868;
+      color: #fff;
+      padding: 10px;
+      border: 0;
+    }
+
+    .table-custom td {
+      padding: 10px;
+      border: 0;
+    }
+  </style>
+
+  <table class="table-custom" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th>Adventure</th>
+        <th>Price</th>
+        <th>Register</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>lorem ipsum sit amet</td>
+        <td class="text-right">$150</td>
+        <td><a href="#" class="btn btn-primary">REGISTER</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+  <script src="jquery/jquery.min.js"> </script>
+  <script>
+
+
+    let textString = '';
+    $('.text-area').val(text + '\r\n\n' + text2);
+
+    $('.copy-text').click(function () {
+      copyToClipboard();
+    })
+
+    function copyToClipboard(element) {
+      // Get the text field
+      var copyText = document.getElementById("myInput");
+
+      // Select the text field
+      $('.text-area').select();
+      // $('.text-area').setSelectionRange(0, 99999); // For mobile devices
+
+      // Copy the text inside the text field
+      navigator.clipboard.writeText($('.text-area').val());
+
+      // Alert the copied text
+      alert("Copied the text: " + $('.text-area').val());
+    }
+    $('.download-image').click(function () {
+      let self = $(this);
+      let url = self.attr("data-url");
+      let fileName = "image";
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.responseType = "blob";
+      xhr.onload = function () {
+        var urlCreator = window.URL || window.webkitURL;
+        var imageUrl = urlCreator.createObjectURL(this.response);
+        var tag = document.createElement('a');
+        tag.href = imageUrl;
+        tag.download = fileName;
+        document.body.appendChild(tag);
+        tag.click();
+        document.body.removeChild(tag);
+        self.innerText = "Download Image";
+      }
+      xhr.send();
+    })
+
+
+  </script>
+</body>
+
+</html>
