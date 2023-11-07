@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readonly Input Field</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- jqueyr ui -->
+    <link rel="stylesheet" href="node_modules/jquery-ui/dist/themes/base/jquery-ui.min.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="section py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <lable for="datepicker">Datepicker</lable>
+                            <input id="datepicker" type="text" class="form-control date-picker-js">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery ui -->
+    <script src="node_modules/jquery-ui/dist/jquery-ui.min.js"></script>
+
+    <!-- custom script -->
+    <script>
+        $('.date-picker-js').datepicker();
+    </script>
+</body>
+
+</html>
