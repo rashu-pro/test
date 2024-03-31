@@ -1,0 +1,409 @@
+.time-jummah{
+    font-size: 20px;
+    font-weight: 600;
+    color:#fff;
+}
+.date-jummah{
+    font-size: 20px;
+    font-weight: 600;
+    color:#2196F3;
+}
+.area-khateeb{
+    margin-top:10px;
+    padding-top:15px;
+    border-top:1px solid #ddd;
+}
+.name-khateeb{
+    font-size: 22px;
+    font-weight: 500;
+    color:#fff;
+}
+
+/* Todays Prayer Times Table For Hero Section */
+.d-flex{
+    display: flex;
+}
+.w-100{
+    width: 100%;
+}
+.bg-black{
+    background-color: #181818;
+}
+
+.bg-gray{
+    background-color: #9e9e9e;
+}
+.text-blue{
+    color: #233fdc;
+}
+.text-white{
+    color: #fff;
+}
+.widget-prayer-times-table-1 .col{
+    padding: 15px 10px 10px 10px;
+    text-align: center;
+    flex: 1;
+}
+.widget-prayer-times-table-1 .column-heading{
+    font-size:22px;
+    font-weight:800;
+    margin:0;
+    padding: 0 0 15px 0;
+    text-transform: uppercase;
+}
+
+.widget-prayer-times-table-1 .column-text{
+    font-size:20px;
+    font-weight:600;
+    margin:0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+
+
+
+
+.widget-prayer-times-table-1 .desktop-version{
+    display: none;
+}
+
+.prayer-times-table-on-hero-section{
+    width:100%;
+    color:#fff;
+    text-align: center;
+    border-collapse: collapse;
+    text-transform: uppercase;
+}
+
+.prayer-times-table-on-hero-section th,
+.prayer-times-table-on-hero-section td{
+    border:0;
+    padding:10px;
+}
+
+.prayer-times-table-on-hero-section th{
+    font-size: 1.4rem;
+}
+.prayer-times-table-on-hero-section td{
+    font-size: 1.2rem;
+}
+
+@media (min-width:768px){
+    .widget-prayer-times-table-1 .desktop-version{
+        display: block;
+    }
+
+    .widget-prayer-times-table-1 .mobile-version{
+        display: none;
+    }
+}
+
+/* Quick links */
+
+.quick-links-wrapper ul{
+    display: flex;
+    list-style: none;
+}
+.quick-links-wrapper ul li a{
+    padding: 0 25px 0 0;
+    position: relative;
+}
+.quick-links-wrapper ul li:first-child a{
+    padding-left:0;
+}
+.quick-links-wrapper ul li a:before{
+    content: '';
+    position: absolute;
+    left: -8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* prayer times */
+.time-list3 {
+    margin: 0;
+    padding: 0;
+}
+.time-list3 > li {
+    padding: 10px 10px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 145px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    flex: 1;
+}
+.time-list3 > li.error-li {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.time-list3 > li span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    color:#fff;
+}
+.time-list3 > li span.ntime {
+    margin-bottom: 0;
+}
+.time-list3 > li span.ntime.jummah {
+    margin-top: 0;
+}
+.time-list3 > li span.start-time.jummah-l:not(:first-child) {
+    padding-top: 10px;
+    border-top: 1px solid #465d4b;
+    margin-top: 5px;
+}
+@media (min-width: 768px) {
+    .time-list3 > li {
+        padding: 10px 25px;
+   }
+}
+@media (min-width: 1071px) {
+    .time-list3li {
+        flex: 0 0 16.66667% !important;
+        max-width: 16.66667% !important;
+   }
+}
+div#countdown-container {
+    margin-top: -30px !important;
+}
+div#countdown-container #namaz-counter > p {
+    font-size: 16px;
+}
+.prayer-times-floating {
+    max-width: 300px;
+    background-color: #fff;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 99999;
+    overflow: hidden;
+}
+@media (min-width: 768px) {
+    .prayer-times-floating {
+        min-width: 340px;
+   }
+}
+.prayer-times-floating .table {
+    margin-bottom: 0;
+}
+.prayer-times-floating .table .tr-heading {
+    background: #c6d1f3;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.prayer-times-floating .table td {
+    width: 50%;
+}
+.prayer-times-floating.toggled {
+    z-index: 9999999;
+}
+.prayer-times-head {
+    padding: 10px 20px;
+   /* text-align: center;
+    */
+    background: #9c27b0;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.prayer-times-head h3 {
+    margin: 0;
+    font-size: 20px;
+}
+.prayer-times-head h3 span {
+    display: none;
+}
+.prayer-times-head.toggled h3 span {
+    display: inline-block;
+}
+.prayer-times-head.toggled .prayer-times-toggle-icon i:before {
+    content: '\f078';
+}
+.prayer-times-body {
+    padding: 0;
+    display: none;
+    border-top: 1px solid #ddd;
+}
+.prayer-times-toggle-icon {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    border-radius: 0.2rem;
+    color: #fff;
+    margin-left: 20px;
+}
+.jummah-row {
+    background-color: #ebf0ff;
+}
+.daily-namaz-row {
+    background-color: #fff;
+}
+@media (max-width: 767px) {
+    .time-wrap3.overlap245 {
+        margin-top: -9.3125rem !important;
+   }
+    .time-wrap3.overlap245 .sec-title {
+        margin-bottom: 1.8125rem;
+   }
+    .time-wrap3.overlap245 .sec-title-inner > h2 {
+        font-size: 24px !important;
+   }
+    .time-wrap3.overlap245 div#countdown-container {
+        margin-top: -15px !important;
+   }
+    .time-wrap3.overlap245 div#countdown-container #namaz-counter > p {
+        padding: 0px 5px 0px 0;
+   }
+}
+.jummah-time {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 10px 15px;
+   /* display: inline-block;
+    */
+   /* min-width: 300px;
+    */
+   /* border-radius: 30px;
+    */
+    margin-top: 0px;
+    z-index: 111;
+    position: relative;
+   /* margin: 0 auto;
+    */
+    text-align: center;
+    align-self: center;
+   /* margin-left: 319px;
+    */
+    top: -10px;
+   /* box-shadow: 0 0 5px;
+    */
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.jummah-time-wrapper {
+    background: #283b6f;
+    text-align: center;
+}
+.jummah-time-wrapper .jummah-section-title {
+    color: #fff;
+    margin: 0;
+    padding: 15px 0 30px 0;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+}
+.jummah-time-wrapper .jummah-section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+.jummah-time-block {
+    padding: 5px 10px;
+   /* background: #fff;
+    */
+    line-height: 1;
+    border-radius: 30px;
+    padding-right: 30px;
+    position: relative;
+}
+.jummah-time-block:after {
+    content: "/";
+    position: absolute;
+    right: 8px;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    top: 50%;
+    transform: translateY(-46%);
+}
+.jummah-time-block:last-child {
+    padding-right: 0;
+}
+.jummah-time-block:last-child:after {
+    display: none;
+}
+.time-list3>li{
+    position: relative;
+}
+.time-list3>li:before{
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #9C27B0;
+    opacity: 0.5;
+}
+.time-list3>li {
+    background-color: #147736
+}
+
+.time-list3>li:nth-child(2n),
+.time-list3 .grn-layer2:before {
+    background-color: #0a993c
+}
+
+div#countdown-container #namaz-counter {
+    background: #fff;
+    width: 260px;
+    border-radius: 20px;
+    padding: 0px 0px;
+    margin: 0 auto;
+}
+div#countdown-container #namaz-counter > p {
+    font-size: 1rem;
+    display: inline-block;
+    padding:5px 5px 5px 0;
+    font-family: Poppins;
+    font-weight: 600;
+	margin:0;
+	line-height:1.2;
+}
+div#countdown-container #namaz-counter span {
+    font-size: 11px;
+    font-family: Poppins;
+    font-weight: 400;
+}
+center{
+	position:absolute;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	z-index:99;
+}
+.time-wrap3 {
+    position: relative;
+}
+div#countdown-container {
+    margin-top: -15px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundraisup Test</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <ul class="list">
+            <li class="list-item">
+                <span class="list-title">JavaScript events demo</span>
+                <span class="list-description">Select the Donate button to launch Checkout. Fired JavaScript events will
+                    appear in the console. Remember to clear the console as you try different events.</span>
+                <div class="loading fade-out"><i class="fa-solid fa-spinner-third fa-spin"
+                        style="--fa-animation-duration: 1s"></i> Preparing example...</div>
+                <div class="example fade-in">
+                    <a href="#XUVPTYJB" style="display: none"></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Fundraise Up: the new standard for online giving -->
+<script>(function(w,d,s,n,a){if(!w[n]){var l='call,catch,on,once,set,then,track'
+    .split(','),i,o=function(n){return'function'==typeof n?o.l.push([arguments])&&o
+    :function(){return o.l.push([n,arguments])&&o}},t=d.getElementsByTagName(s)[0],
+    j=d.createElement(s);j.async=!0;j.src='https://cdn.fundraiseup.com/widget/'+a;
+    t.parentNode.insertBefore(j,t);o.s=Date.now();o.v=4;o.h=w.location.href;o.l=[];
+    for(i=0;i<7;i++)o[l[i]]=o(l[i]);w[n]=o}
+    })(window,document,'script','FundraiseUp','AKSGMUYT');</script>
+    <!-- End Fundraise Up -->
+    
+    <!-- Puts Fundraise Up into test mode so that you can experiement with the JavaScript events. -->
+    <script>
+    window.fundraiseup_livemode = false;
+    </script>
+    <!-- End test mode code -->
+
+    <script>
+        FundraiseUp.on('checkoutOpen', function (details) {
+            console.log(details);
+        });
+        FundraiseUp.on('checkoutClose', function (details) {
+            if(details.campaign.id === 'FUNRDRMPCJC'){
+                window.location.href = ' https://theisla.masjidapps.net/teaching-palestine-toolkit/';
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
